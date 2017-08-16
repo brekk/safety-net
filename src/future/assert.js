@@ -1,0 +1,1 @@
+export {isFuture} from 'fluture'
