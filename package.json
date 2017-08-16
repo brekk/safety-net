@@ -1,7 +1,6 @@
 {
   "name": "safety-net",
   "browser": "safety-net",
-  "reveal": true,
   "version": "0.0.0",
   "description": "a toolset for adding logical disjunctions / safety for your async functional pipelines",
   "main": "safety-net.js",
