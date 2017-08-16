@@ -43,9 +43,9 @@ module.exports = {
         script: series(
           mkdirp(`dist`),
           `rollup -c config/commonjs.js`,
-          `browserify --node -s safetyNet ${MINIFIED} > ${MINIFIED_BROWSER}`,
-          prepend(`/* safetyNet v.${version} */`, MINIFIED),
-          prepend(`/* safetyNet v.${version} */`, MINIFIED_BROWSER)
+          `browserify --node -s safety-net ${MINIFIED} > ${MINIFIED_BROWSER}`,
+          prepend(`/* safety-net v.${version} */`, MINIFIED),
+          prepend(`/* safety-net v.${version} */`, MINIFIED_BROWSER)
         )
       }
     },
@@ -75,10 +75,6 @@ module.exports = {
         description: `generate a visual dependency graph in DOT format`
       }
     },
-    dist: {
-      description: `generate files`,
-      script: `nps build`
-    },
     lint: {
       description: `lint the javascript files`,
       script: `eslint src/**`
@@ -89,7 +85,7 @@ module.exports = {
     },
     care: {
       description: `the tasks auto-run before commits`,
-      script: allNPS(`dist`, `test`, `cost`) //, `regenerate`)
+      script: allNPS(`build`, `test`, `cost`, `regenerate`)
     },
     publish: {
       description: `the tasks to run at publish-time`,
@@ -109,11 +105,11 @@ module.exports = {
     },
     regenerate: {
       description: `regenerate readme`,
-      script: series(`nps regenerate.readme`, `nps regenerate.addAPI`, `nps dependencies.graph`),
-      readme: {
-        description: `run ljs2 against example.literate.js to get our README.md file regenerated`,
-        script: `ljs2 example.literate.js -o README.md`
-      },
+      script: series(`nps regenerate.addAPI`, `nps dependencies.graph`),
+      // readme: {
+      //   description: `run ljs2 against example.literate.js to get our README.md file`,
+      //   script: `ljs2 example.literate.js -o README.md`
+      // },
       addAPI: {
         description: `add API docs to the README`,
         script: `documentation readme -s "API" src/index.js`

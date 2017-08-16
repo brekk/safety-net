@@ -1,7 +1,6 @@
 {
   "name": "safety-net",
   "browser": "safety-net",
-  "reveal": true,
   "version": "0.0.0",
   "description": "a toolset for adding logical disjunctions / safety for your async functional pipelines",
   "main": "safety-net.js",
@@ -71,7 +70,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "get-es-imports-exports": "^1.0.7",
-    "husky": "0.14.3",
+    "husky": "^0.14.3",
     "jest": "^20.0.4",
     "madge": "^2.0.0",
     "nps": "^5.7.0",
