@@ -1,5 +1,5 @@
 import {promise} from 'fluture'
-import {curry} from 'katsu-curry'
+import {curry} from 'f-utility'
 
 /* global expect */
 export const t = {
