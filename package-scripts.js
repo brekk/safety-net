@@ -75,10 +75,6 @@ module.exports = {
         description: `generate a visual dependency graph in DOT format`
       }
     },
-    dist: {
-      description: `generate files`,
-      script: `nps build`
-    },
     lint: {
       description: `lint the javascript files`,
       script: `eslint src/**`
@@ -89,7 +85,7 @@ module.exports = {
     },
     care: {
       description: `the tasks auto-run before commits`,
-      script: allNPS(`dist`, `test`, `cost`, `regenerate`)
+      script: allNPS(`build`, `test`, `cost`, `regenerate`)
     },
     publish: {
       description: `the tasks to run at publish-time`,
