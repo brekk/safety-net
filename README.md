@@ -1,5 +1,7 @@
 # safety-net
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/brekk/safety-net.svg)](https://greenkeeper.io/)
+
 a toolset for adding safety to your asynchronous functional pipelines
 
 This module attempts to offer the same general API as `handrail` (for dealing with synchronous logical disjunctions / Eithers) but to model asynchronous operations (using the excellent [fluture](https://www.npmjs.com/package/fluture) library) instead.
