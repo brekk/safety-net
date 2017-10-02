@@ -6,18 +6,28 @@
   "main": "safety-net.js",
   "author": "brekk",
   "license": "ISC",
-  "ava": {
-    "require": [
-      "babel-register"
+  "jest": {
+    "modulePaths": [
+      "src"
     ],
-    "files": [
-      "src/*.spec.js"
+    "moduleDirectories": [
+      "node_modules",
+      "src"
     ],
-    "source": [
-      "src/*.js"
+    "mapCoverage": true,
+    "moduleNameMapper": {
+      "@safety-net/(.*)": "<rootDir>/src/$1.js",
+      "@assertions/(.*)": "<rootDir>/src/assertions/$1.js",
+      "@future/(.*)": "<rootDir>/src/future/$1.js",
+      "@errors/(.*)": "<rootDir>/src/errors/$1.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "json"
     ],
-    "concurrency": 10,
-    "babel": "inherit"
+    "testMatch": [
+      "**/*.spec.(jsx|js)"
+    ]
   },
   "nyc": {
     "lines": 100,
@@ -46,47 +56,51 @@
     "check-coverage": true
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "6.25.0",
-    "babel-eslint": "^7.2.3",
-    "babel-loader": "7.1.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-es2015-destructuring": "^6.23.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "browserify": "^14.4.0",
     "cost-of-modules": "^1.0.1",
-    "documentation": "^4.0.0-rc.1",
-    "eslint": "3.19.0",
+    "documentation": "^5.3.2",
+    "eslint": "^4.8.0",
     "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-babel": "4.1.2",
-    "eslint-plugin-eslint-comments": "1.0.3",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-eslint-comments": "^1.0.3",
     "eslint-plugin-fp": "^2.3.0",
-    "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-node": "5.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "get-es-imports-exports": "^1.0.7",
+    "germs": "^0.1.9",
+    "get-es-imports-exports": "^1.0.8",
     "husky": "^0.14.3",
-    "jest": "^20.0.4",
-    "madge": "^2.0.0",
-    "nps": "^5.7.0",
-    "nps-utils": "1.3.0",
-    "nyc": "11.1.0",
+    "jest": "^21.2.1",
+    "ljs2": "^1.0.3",
+    "madge": "^2.2.0",
+    "nps": "^5.7.1",
+    "nps-utils": "^1.3.0",
+    "nyc": "^11.2.1",
     "ramda": "^0.24.1",
-    "rollup-plugin-babili": "^3.1.0",
-    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-alias": "^1.3.1",
+    "rollup-plugin-babel-minify": "^3.1.2",
+    "rollup-plugin-babili": "^3.1.1",
+    "rollup-plugin-buble": "^0.16.0",
     "rollup-plugin-cleanup": "^1.0.1",
-    "rollup-plugin-commonjs": "8.1.0",
-    "rollup-plugin-json": "2.3.0",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-post-replace": "^1.0.0",
-    "rollup-plugin-progress": "0.4.0",
+    "rollup-plugin-progress": "^0.4.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "xtrace": "0.1.0"
+    "xtrace": "^0.1.3"
   },
   "dependencies": {
     "entrust": "0.0.7",

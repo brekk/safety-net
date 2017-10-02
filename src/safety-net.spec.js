@@ -99,18 +99,18 @@ test(`anchor should Leftify a null input`, (done) => {
 
 test(`anchor should fail with a Left when assertion is not a function`, () => {
   const badSafety = anchor({}, identity, `whatever`)
-  t.deepEqual(badSafety, reject(new Error(`anchor: Expected assertion to be function.`)))
+  t.deepEqual(badSafety, reject(`anchor: Expected assertion to be function.`))
   // t.is(messenger(badSafety), `anchor: Expected assertion to be function.`)
 })
 test(`anchor should fail with a Left when wrongPath is not a function`, () => {
   const badDivider = anchor(identity, {}, `whatever`)
-  t.deepEqual(badDivider, reject(new Error(`anchor: Expected wrongPath to be function.`)))
+  t.deepEqual(badDivider, reject(`anchor: Expected wrongPath to be function.`))
 })
 test(`anchor should fail with a Left when assertion and wrongPath are not functions`, () => {
   const dumbInputs = anchor({}, {}, `whatever`)
   t.deepEqual(
     dumbInputs,
-    reject(new Error(`anchor: Expected assertion, wrongPath to be functions.`))
+    reject(`anchor: Expected assertion, wrongPath to be functions.`)
   )
 })
 

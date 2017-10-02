@@ -35,8 +35,8 @@ export const anchor = curry(
     }
     return (
       assertion(input) ?
-      GuidedRight :
-      pipe(wrongPath, GuidedLeft)
+        GuidedRight :
+        pipe(wrongPath, GuidedLeft)
     )(input)
   }
 )

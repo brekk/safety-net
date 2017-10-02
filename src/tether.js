@@ -34,8 +34,8 @@ export const tether = curry(
   function _tether(anchors, goodPath, input) {
     return map(goodPath, (
       isFuture(input) ?
-      chain(asyncCase(anchors), input) :
-      syncCase(anchors, input)
+        chain(asyncCase(anchors), input) :
+        syncCase(anchors, input)
     ))
   }
 )

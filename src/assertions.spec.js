@@ -34,6 +34,8 @@ const testFn = (fn) => (done) => {
   t.plan(fn === judgeObject ? 3 : 4)
   t.is(typeof fn, `function`)
   const input = {k: `Some input with MIXED capitalization`}
+  const lowerify = ({k}) => ({k: lower(k)})
+  const lowermapify = (list) => map(lower, list)
   const inputO = {
     law: (x) => {
       t.deepEqual(x, input)
@@ -46,8 +48,8 @@ const testFn = (fn) => (done) => {
     },
     post: (
       fn === judgement ?
-      ({k}) => ({k: lower(k)}) :
-      (list) => map(lower, list)
+        lowerify :
+        lowermapify
     ),
     jury: (end) => {
       if (fn === judgement) {
